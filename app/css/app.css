@@ -1,4 +1,7 @@
 /* app css stylesheet */
+body {
+  background:#F1F1F1;
+}
 
 .wrapper {
   padding: 50px;
@@ -10,14 +13,50 @@ input {
   font-size: 50px;
   border: 0;
   font-weight: 200;
+  outline: 0;
+  padding: 5px 0px;
+  border-bottom: 2px solid #D1D1D1;
+  background: transparent;
+}
+
+h2 {
+  color: #6FA26F;
 }
 
 .friend {
   display:none;
-  margin: 50px;
+  margin: 20px;
   padding: 20px;
-}
+  text-align: center; }
 
-.friend.online {
-  display: inline-block;
-}
+  .friend img {
+    border: 5px solid #FFF;
+    border-radius: 100%;
+    box-shadow: 0 1px 3px #C5C4C4;
+  }
+  .friend h3 {
+    margin: 0;
+    text-shadow: 0 1px #FFF;
+    color: #2E4721;
+  }
+  .friend h3 div {
+    font-size: 12px;
+    position: relative;
+    top: -2px;
+    color: #82AF69;
+    display: inline-block;
+  }
+  .friend h3 div span {
+    font-size: 9px;
+    text-transform: uppercase;
+
+  }
+  .friend p {
+    color: #8F8E8E;
+    text-shadow: 0 1px #FFF;
+    margin: 3px 0;
+    font-size: 12px;
+  }
+  .friend.online {
+    display: inline-block;
+  }

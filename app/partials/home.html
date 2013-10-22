@@ -1,14 +1,12 @@
 <form ng-submit="fetchFriends()">
-	<input ng-model="gamertag" />
+	<input ng-model="gamertag" placeholder="Enter your gamertag..." />
 </form>
 
-<h2 ng-hide="loading">You have {{ online_friends.length }} friends online</h2>
-
-<div ng-show="loading">loading...</div>
+<h2 ng-show="!loading && gamertag">You have {{ online_friends.length }} friends online</h2>
+<h2 ng-show="loading">loading...</h2>
 
 <div ng-class="{online: friend.online}" class="friend" ng-repeat="friend in friends | orderBy:'lastseen':true">
 	<img ng-src="{{ friend.gamerpic.small }}" />
-	<h3>{{ friend.gamertag }}</h3>
-	<h4>{{ friend.gamerscore }}</h4>
+	<h3>{{ friend.gamertag }} <div>{{ friend.gamerscore }} <span>GP</span></div></h3>
 	<p>{{ friend.status }}</p>
 </div>
