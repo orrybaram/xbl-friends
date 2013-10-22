@@ -1,9 +1,23 @@
 /* app css stylesheet */
 
+.wrapper {
+  padding: 50px;
+}
+
+input {
+  line-height: normal;
+  display: block;
+  font-size: 50px;
+  border: 0;
+  font-weight: 200;
+}
+
 .friend {
   display:none;
+  margin: 50px;
+  padding: 20px;
 }
 
 .friend.online {
-  display: block;
+  display: inline-block;
 }

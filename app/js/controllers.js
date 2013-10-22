@@ -7,6 +7,7 @@ angular.module('myApp.controllers', []).
 
   	$scope.gamertag = localStorage["gamertag"] || "";
   	$scope.friends = [];
+  	$scope.online_friends = [];
   	$scope.loading = false;
 
   	$scope.fetchFriends = function() {
@@ -16,12 +17,20 @@ angular.module('myApp.controllers', []).
   		$http.get('https://www.xboxleaders.com/api/2.0/friends.json?gamertag=' + encodeURIComponent($scope.gamertag)).
   			success(function(data) {
   				console.log(data)
-  				$scope.loading = false;
   				$scope.friends = data.data.friends;
+  				for (var i = data.data.friends.length - 1; i >= 0; i--) {
+  					var friend = data.data.friends[i]
+  					if(friend.online) {
+  						$scope.online_friends.push(friend);
+  					}
+  				};
+
   			}).
   			error(function(error) {
-  				$scope.loading = false;
   				console.log(error)
+  			}).
+  			then(function() {
+  				$scope.loading = false;
   			})
   		;
   	}
