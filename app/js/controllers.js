@@ -16,16 +16,20 @@ angular.module('myApp.controllers', []).
   		
   		$http.get('https://www.xboxleaders.com/api/2.0/friends.json?gamertag=' + encodeURIComponent($scope.gamertag)).
   			success(function(data) {
-  				console.log(data)
+  				// reset the friend model
+  				$scope.friends = [];
+  				$scope.online_friends = [];
+
   				$scope.friends = data.data.friends;
+  				
+  				// find friends that are online
   				for (var i = data.data.friends.length - 1; i >= 0; i--) {
   					var friend = data.data.friends[i]
   					if(friend.online) {
   						$scope.online_friends.push(friend);
   					}
   				};
-
-  			}).
+			}).
   			error(function(error) {
   				console.log(error)
   			}).

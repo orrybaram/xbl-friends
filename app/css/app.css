@@ -24,10 +24,12 @@ h2 {
 }
 
 .friend {
-  display:none;
   margin: 20px;
   padding: 20px;
-  text-align: center; }
+  text-align: center;
+  display: inline-block;
+  opacity: .2; 
+  width:200px;}
 
   .friend img {
     border: 5px solid #FFF;
@@ -39,14 +41,14 @@ h2 {
     text-shadow: 0 1px #FFF;
     color: #2E4721;
   }
-  .friend h3 div {
+  .friend div {
     font-size: 12px;
     position: relative;
     top: -2px;
     color: #82AF69;
     display: inline-block;
   }
-  .friend h3 div span {
+  .friend div span {
     font-size: 9px;
     text-transform: uppercase;
 
@@ -58,5 +60,5 @@ h2 {
     font-size: 12px;
   }
   .friend.online {
-    display: inline-block;
+    opacity: 1;
   }
