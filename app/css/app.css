@@ -1,0 +1,9 @@
+/* app css stylesheet */
+
+.friend {
+  display:none;
+}
+
+.friend.online {
+  display: block;
+}

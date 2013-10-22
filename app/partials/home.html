@@ -1,0 +1,12 @@
+<h1>WHOS ONLINE?</h1>
+
+<form ng-submit="fetchFriends()">
+	<input ng-model="gamertag" />
+</form>
+
+<div ng-show="loading">loading...</div>
+
+<div ng-class="{online: friend.online}" class="friend" ng-repeat="friend in friends | orderBy:'lastseen':true">
+	<img ng-src="{{ friend.gamerpic.small }}" />
+	<h3>{{ friend.gamertag }}</h3>
+</div>
